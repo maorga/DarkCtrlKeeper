@@ -6,7 +6,7 @@
 
 1. **Official Sources Only:**
    - Download only from official GitHub releases
-   - URL: `https://github.com/yourusername/DarkCtrlKeeper/releases`
+   - URL: `https://github.com/maorga/DarkCtrlKeeper/releases`
    - Verify the repository owner before downloading
 
 2. **Verify File Integrity:**
