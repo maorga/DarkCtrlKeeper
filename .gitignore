@@ -1,0 +1,271 @@
+# =======================================
+# Python
+# =======================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.whl
+pip-log.txt
+pip-delete-this-directory.txt
+
+# =======================================
+# Virtual Environment
+# =======================================
+venv/
+env/
+ENV/
+.env/
+.venv/
+.virtualenv/
+Scripts/
+Lib/
+Include/
+pyvenv.cfg
+pip-selfcheck.json
+
+# =======================================
+# IDE - Visual Studio Code
+# =======================================
+.vscode/
+*.code-workspace
+.history/
+.vscode-test/
+
+# =======================================
+# IDE - PyCharm
+# =======================================
+.idea/
+*.iml
+*.iws
+*.ipr
+.idea_modules/
+
+# =======================================
+# IDE - Other
+# =======================================
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# =======================================
+# Operating System
+# =======================================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =======================================
+# Logs and databases
+# =======================================
+*.log
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
+*.db-shm
+*.db-wal
+logs/
+*.log.*
+*.csv
+!requirements.txt
+data/
+*.json.bak
+
+# =======================================
+# Unit test / coverage reports
+# =======================================
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+cov.xml
+
+# =======================================
+# CRITICAL: Secrets and Configuration (NEVER COMMIT!)
+# =======================================
+.env
+.env.*
+!.env.example
+user_config.json
+secrets.env
+api_keys.json
+**/config/secrets.py
+**/config/credentials.json
+**/config/settings.json
+*.key
+*.pem
+*.p12
+*.pfx
+.env.local
+.env.*.local
+client_secret*.json
+service-account*.json
+
+# Google Analytics & Tracking
+ga4_credentials.json
+analytics_*.json
+!analytics_manager.py
+measurement_id.txt
+api_secret.txt
+
+# =======================================
+# User-generated data
+# =======================================
+client_id.txt
+analytics_client_id.txt
+user_preferences.json
+app_state.json
+session_data.json
+
+# =======================================
+# Compiled files
+# =======================================
+*.pyc
+*.pyo
+*.pyd
+*.dll
+*.dylib
+
+# =======================================
+# Distribution / packaging
+# =======================================
+*.spec
+!DarkCtrlKeeper.spec
+*.manifest
+!scripts/admin.manifest
+.Python
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+MANIFEST
+pip-wheel-metadata/
+
+# =======================================
+# PyInstaller
+# =======================================
+*.exe
+!DarkCtrlKeeper.exe
+*.msi
+build/
+dist/
+*.spec
+!DarkCtrlKeeper.spec
+
+# =======================================
+# Documentation builds
+# =======================================
+docs/_build/
+docs/_static/
+docs/_templates/
+site/
+
+# =======================================
+# Backup and temporary files
+# =======================================
+*.bak
+*.tmp
+*.temp
+*.old
+*.orig
+*~
+.backup/
+backup/
+backup_*/
+archive/
+*.backup
+
+# =======================================
+# Project-specific exclusions
+# =======================================
+# Development and testing files
+font_tester.py
+test_*.temp.py
+debug_*.py
+
+# Temporary documentation and notes
+abc.txt
+todo.txt
+notes.txt
+
+# Internal documentation
+docs/GITHUB_UPLOAD_GUIDE.md
+docs/REFACTORING_SUMMARY.md
+docs/PROJECT_SUMMARY.md
+
+# Deprecated documentation (uncomment to exclude)
+# IMPLEMENTATION_SUMMARY.md
+# INTERFACE_SPECS.md
+# QUICK_REFERENCE.md
+# README_NEW.md
+# USAGE.md
+# VISUAL_LAYOUT_GUIDE.md
+
+# Local development only
+.vscode/launch.json
+.vscode/tasks.json
+!.vscode/settings.json
+!.vscode/extensions.json

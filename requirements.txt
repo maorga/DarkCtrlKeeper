@@ -1,0 +1,35 @@
+# =======================================
+# DarkCtrlKeeper Dependencies
+# =======================================
+# Python 3.8+ required
+
+# GUI Framework
+PyQt6>=6.10.0
+
+# Keyboard Control
+pynput>=1.7.6
+
+# HTTP Client (for optional analytics)
+requests>=2.31.0
+urllib3>=2.0.0
+
+# Environment Variables (for optional analytics configuration)
+python-dotenv>=1.0.0
+
+# =======================================
+# Development Dependencies (optional)
+# =======================================
+# Uncomment below for development
+
+# Testing
+# pytest>=7.4.0
+# pytest-qt>=4.2.0
+# pytest-cov>=4.1.0
+
+# Code Quality
+# pylint>=3.0.0
+# black>=23.0.0
+# mypy>=1.5.0
+
+# Build
+pyinstaller>=6.0.0
