@@ -9,7 +9,7 @@ Get up and running with DarkCtrlKeeper in 5 minutes!
 ### Option 1: Download Pre-Built Executable (Easiest)
 
 1. **Download the latest release:**
-   - Go to [GitHub Releases](https://github.com/yourusername/DarkCtrlKeeper/releases)
+   - Go to [GitHub Releases](https://github.com/maorga/DarkCtrlKeeper/releases)
    - Download `DarkCtrlKeeper_v1.0.0.zip`
 
 2. **Extract the zip file:**
@@ -33,7 +33,7 @@ Get up and running with DarkCtrlKeeper in 5 minutes!
 
 1. **Clone the repository:**
    ```powershell
-   git clone https://github.com/yourusername/DarkCtrlKeeper.git
+   git clone https://github.com/maorga/DarkCtrlKeeper.git
    cd DarkCtrlKeeper
    ```
 
@@ -208,7 +208,7 @@ python src/main.py
 
 1. **Clone and setup:**
    ```powershell
-   git clone https://github.com/yourusername/DarkCtrlKeeper.git
+   git clone https://github.com/maorga/DarkCtrlKeeper.git
    cd DarkCtrlKeeper
    python -m venv venv
    .\venv\Scripts\Activate.ps1
@@ -249,7 +249,7 @@ python src/main.py
    - Check troubleshooting sections
 
 2. **Search existing issues:**
-   - [GitHub Issues](https://github.com/yourusername/DarkCtrlKeeper/issues)
+   - [GitHub Issues](https://github.com/maorga/DarkCtrlKeeper/issues)
 
 3. **Create new issue:**
    - Describe your problem clearly

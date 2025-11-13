@@ -57,7 +57,7 @@ Analytics helps you understand:
 2. Click **Web** (even though this is a desktop app, we use web stream for Measurement Protocol)
 
 3. Enter stream details:
-   - **Website URL:** `https://github.com/yourusername/DarkCtrlKeeper` (or your project URL)
+   - **Website URL:** `https://github.com/maorga/DarkCtrlKeeper`
    - **Stream name:** DarkCtrlKeeper Desktop App
 
 4. Click **Create stream**
@@ -277,7 +277,7 @@ Then check the event in GA4 after 5-10 minutes.
 ## Questions?
 
 If you have questions about analytics setup, please open an issue on GitHub:
-[https://github.com/yourusername/DarkCtrlKeeper/issues](https://github.com/yourusername/DarkCtrlKeeper/issues)
+[https://github.com/maorga/DarkCtrlKeeper/issues](https://github.com/maorga/DarkCtrlKeeper/issues)
 
 ---
 

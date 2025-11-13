@@ -89,7 +89,7 @@
 
 ### For Users (Easiest)
 
-1. **Download** the latest release from [GitHub Releases](https://github.com/maorga/mu_clicker/releases)
+1. **Download** the latest release from [GitHub Releases](https://github.com/maorga/DarkCtrlKeeper/releases)
 2. **Extract** the ZIP file to your preferred location
 3. **Run** `DarkCtrlKeeper.exe`
 4. **Click "Yes"** when Windows asks for administrator privileges
@@ -100,8 +100,8 @@ That's it! See [Quick Start Guide](docs/QUICKSTART.md) for detailed instructions
 
 ```powershell
 # Clone repository
-git clone https://github.com/maorga/mu_clicker.git
-cd mu_clicker
+git clone https://github.com/maorga/DarkCtrlKeeper.git
+cd DarkCtrlKeeper
 
 # Create virtual environment
 python -m venv venv
@@ -127,7 +127,7 @@ python src/main.py
 
 ### Option 1: Pre-Built Executable (Recommended)
 
-1. Go to [Releases](https://github.com/maorga/mu_clicker/releases)
+1. Go to [Releases](https://github.com/maorga/DarkCtrlKeeper/releases)
 2. Download `DarkCtrlKeeper_v1.0.0.zip`
 3. Extract to `C:\Games\DarkCtrlKeeper` (or any location)
 4. Run `DarkCtrlKeeper.exe`
@@ -136,8 +136,8 @@ python src/main.py
 
 ```powershell
 # 1. Clone the repository
-git clone https://github.com/maorga/mu_clicker.git
-cd mu_clicker
+git clone https://github.com/maorga/DarkCtrlKeeper.git
+cd DarkCtrlKeeper
 
 # 2. Create virtual environment (recommended)
 python -m venv venv
@@ -348,8 +348,8 @@ Contributions are welcome! Here's how you can help:
 
 ```powershell
 # Fork and clone your fork
-git clone https://github.com/YOUR_USERNAME/mu_clicker.git
-cd mu_clicker
+git clone https://github.com/YOUR_USERNAME/DarkCtrlKeeper.git
+cd DarkCtrlKeeper
 
 # Create feature branch
 git checkout -b feature/your-feature-name
@@ -424,14 +424,14 @@ See [LICENSE](LICENSE) for full text.
 ### Getting Help
 
 - **📖 Documentation:** Check the [docs/](docs/) folder
-- **🐛 Bug Reports:** [GitHub Issues](https://github.com/maorga/mu_clicker/issues)
-- **💡 Feature Requests:** [GitHub Issues](https://github.com/maorga/mu_clicker/issues)
-- **💬 Discussions:** [GitHub Discussions](https://github.com/maorga/mu_clicker/discussions)
+- **🐛 Bug Reports:** [GitHub Issues](https://github.com/maorga/DarkCtrlKeeper/issues)
+- **💡 Feature Requests:** [GitHub Issues](https://github.com/maorga/DarkCtrlKeeper/issues)
+- **💬 Discussions:** [GitHub Discussions](https://github.com/maorga/DarkCtrlKeeper/discussions)
 
 ### Maintainer
 
 - **GitHub:** [@maorga](https://github.com/maorga)
-- **Repository:** [mu_clicker](https://github.com/maorga/mu_clicker)
+- **Repository:** [DarkCtrlKeeper](https://github.com/maorga/DarkCtrlKeeper)
 
 ---
 
@@ -457,6 +457,6 @@ See [LICENSE](LICENSE) for full text.
 
 ⭐ **Star this project if you find it useful!** ⭐
 
-[Report Bug](https://github.com/maorga/mu_clicker/issues) · [Request Feature](https://github.com/maorga/mu_clicker/issues) · [Documentation](docs/)
+[Report Bug](https://github.com/maorga/DarkCtrlKeeper/issues) · [Request Feature](https://github.com/maorga/DarkCtrlKeeper/issues) · [Documentation](docs/)
 
 </div>
