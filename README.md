@@ -217,6 +217,18 @@ By using this software, you acknowledge that you use it at your own discretion a
 
 ---
 
+## 🎯 Official Repository
+This is the **original** DarkCtrlKeeper by [@MaorG](https://github.com/maorg).
+
+⚠️ **Beware of forks that:**
+- Remove credits
+- Add malware
+- Charge money for free software
+
+✅ **Always download from official releases only**
+
+---
+
 ## 🏗️ Building from Source
 
 ### Prerequisites
