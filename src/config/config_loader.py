@@ -3,11 +3,10 @@ Configuration Loader for DarkCtrlKeeper
 ========================================
 
 Loads environment variables from .env file and provides
-configuration for optional Google Analytics 4 integration.
+configuration settings for the application.
 
 Features:
 - Loads .env file if present
-- Provides GA4 configuration
 - Graceful degradation if .env is missing
 - Type-safe configuration access
 """
@@ -33,8 +32,7 @@ class Config:
     
     Example:
         config = Config()
-        if config.is_analytics_enabled():
-            ga4_config = config.get_ga4_config()
+        version = config.get_app_version()
     """
     
     def __init__(self, env_path: Optional[Path] = None):
@@ -63,30 +61,7 @@ class Config:
             load_dotenv(self.env_path)
             print(f"✓ Loaded environment from {self.env_path}")
         else:
-            print(f"ℹ No .env file found at {self.env_path} - analytics disabled")
-    
-    def get_ga4_config(self) -> Dict[str, Optional[str]]:
-        """
-        Get Google Analytics 4 configuration.
-        
-        Returns:
-            Dictionary with 'measurement_id' and 'api_secret' keys.
-            Values may be None if not configured.
-        """
-        return {
-            'measurement_id': os.getenv('GA4_MEASUREMENT_ID'),
-            'api_secret': os.getenv('GA4_API_SECRET')
-        }
-    
-    def is_analytics_enabled(self) -> bool:
-        """
-        Check if analytics is properly configured.
-        
-        Returns:
-            True if both GA4_MEASUREMENT_ID and GA4_API_SECRET are set.
-        """
-        config = self.get_ga4_config()
-        return all(config.values())
+            print(f"ℹ No .env file found at {self.env_path}")
     
     def get_app_version(self) -> str:
         """
@@ -118,15 +93,7 @@ class Config:
             "=" * 30,
             f"App Version: {self.get_app_version()}",
             f"Debug Mode: {self.is_debug_mode()}",
-            f"Analytics Enabled: {self.is_analytics_enabled()}",
         ]
-        
-        if self.is_analytics_enabled():
-            ga4_config = self.get_ga4_config()
-            lines.append(f"GA4 Measurement ID: {ga4_config['measurement_id']}")
-            lines.append("GA4 API Secret: [CONFIGURED]")
-        else:
-            lines.append("Analytics: Not configured (optional)")
         
         return "\n".join(lines)
 

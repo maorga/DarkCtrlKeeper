@@ -40,7 +40,7 @@
 
 - **🎯 Purpose-Built:** Designed specifically for MU Online's Greater Fortitude buff management
 - **🎨 Beautiful UI:** Dark fantasy themed interface that complements MU Online's aesthetic
-- **🔒 Safe & Secure:** Open source, no data collection (unless you opt-in to analytics)
+- **🔒 Safe & Secure:** Open source, no data collection
 - **💻 Professional:** Built with modern Python, PyQt6, and best practices
 
 ---
@@ -72,14 +72,6 @@
   - Choose between hotkey 4 or 5 for buff tracking
   - Stop/Resume timer controls
   - Manual reset button
-
-### Advanced Features
-
-- **📊 Optional Analytics** (Privacy-Focused)
-  - Google Analytics 4 integration for usage tracking
-  - Completely optional - works perfectly without it
-  - No personal data collected
-  - See [GA4 Tracking Guide](docs/GA4_TRACKING_GUIDE.md)
 
 - **🔒 Administrator Privileges**
   - Automatically requests UAC elevation
@@ -152,11 +144,7 @@ python -m venv venv
 # 4. Install dependencies
 pip install -r requirements.txt
 
-# 5. (Optional) Configure analytics
-Copy-Item .env.example .env
-# Edit .env with your GA4 credentials
-
-# 6. Run the application
+# 5. Run the application
 python src/main.py
 ```
 
@@ -269,34 +257,11 @@ See [scripts/build.py](scripts/build.py) for full configuration.
 
 ## ⚙️ Configuration
 
-### Optional Analytics (Google Analytics 4)
-
-Analytics is **completely optional**. The app works perfectly without it.
-
-**To enable analytics:**
-
-1. Create a Google Analytics 4 property
-2. Copy `.env.example` to `.env`
-3. Fill in your credentials:
-   ```bash
-   GA4_MEASUREMENT_ID=G-XXXXXXXXXX
-   GA4_API_SECRET=your_secret_here
-   ```
-
-**To disable analytics:**
-- Don't create a `.env` file (default)
-- OR delete the `.env` file
-- OR leave GA4 fields empty
-
-See [GA4 Tracking Guide](docs/GA4_TRACKING_GUIDE.md) for detailed setup instructions.
-
 ### Environment Variables
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `GA4_MEASUREMENT_ID` | Google Analytics 4 Measurement ID | (none) |
-| `GA4_API_SECRET` | GA4 API Secret | (none) |
-| `APP_VERSION` | Application version for tracking | `1.0.0` |
+| `APP_VERSION` | Application version | `1.0.0` |
 | `DEBUG` | Enable debug mode (`true`/`false`) | `false` |
 
 ---
@@ -315,7 +280,6 @@ See [GA4 Tracking Guide](docs/GA4_TRACKING_GUIDE.md) for detailed setup instruct
 
 ### Security & Privacy
 - **[Security Policy](docs/SECURITY.md)** - Security best practices
-- **[GA4 Tracking Guide](docs/GA4_TRACKING_GUIDE.md)** - Analytics setup and privacy
 
 ### Reference
 - **[Interface Specs](INTERFACE_SPECS.md)** - UI specifications
@@ -328,16 +292,14 @@ See [GA4 Tracking Guide](docs/GA4_TRACKING_GUIDE.md) for detailed setup instruct
 ### For Users
 
 - ✅ **Open Source:** All code is visible and auditable
-- ✅ **No Spyware:** Zero data collection without opt-in
+- ✅ **No Data Collection:** Zero tracking or telemetry
 - ✅ **Safe Download:** Only download from official GitHub releases
 - ✅ **Administrator Required:** Needed for keyboard control (normal)
 
 ### For Developers
 
-- ✅ **Secrets Management:** Never commit `.env` or API keys
-- ✅ **Environment Variables:** All secrets loaded from `.env`
-- ✅ **Comprehensive .gitignore:** Prevents accidental secret commits
 - ✅ **Dependencies Pinned:** Exact versions in `requirements.txt`
+- ✅ **Comprehensive .gitignore:** Prevents accidental commits
 
 **Read the full [Security Policy](docs/SECURITY.md)**
 

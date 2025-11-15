@@ -19,23 +19,11 @@
    - This is normal and required for global hotkeys
    - Windows UAC will prompt you - click "Yes"
 
-4. **Analytics Privacy:**
-   - Analytics is **completely optional**
-   - No personal data is collected
-   - See `docs/GA4_TRACKING_GUIDE.md` for details
-   - Don't create `.env` file to disable analytics entirely
-
 ### What Data is Collected?
 
-**Without .env file (Analytics Disabled):**
 - ✅ No data collected
 - ✅ No network requests made
 - ✅ Completely offline operation
-
-**With .env file (Analytics Enabled):**
-- ✅ Anonymous usage events (app opened, CTRL locked, etc.)
-- ✅ Random client ID (stored in `user_config.json`)
-- ✅ App version and platform (Windows, etc.)
 - ❌ NO personal information
 - ❌ NO file paths or system information
 - ❌ NO keystroke data from user input
@@ -63,38 +51,15 @@ Add-MpPreference -ExclusionPath "C:\Path\To\DarkCtrlKeeper"
 
 ## 🛡️ For Developers
 
-### CRITICAL: Secrets Management
+### CRITICAL: Configuration Management
 
-1. **NEVER Commit Secrets:**
-   ```bash
-   # These files must NEVER be committed:
-   - .env
-   - user_config.json
-   - Any file with API keys or passwords
-   ```
-
-2. **Use .gitignore:**
+1. **Use .gitignore:**
    - The provided `.gitignore` excludes sensitive files
    - Review before every commit:
      ```powershell
      git status
      git diff --cached
      ```
-
-3. **Environment Variables:**
-   ```python
-   # ✅ CORRECT: Load from environment
-   import os
-   api_secret = os.getenv('GA4_API_SECRET')
-   
-   # ❌ WRONG: Hardcoded secrets
-   api_secret = "your_secret_here"  # NEVER DO THIS!
-   ```
-
-4. **Template Files:**
-   - Use `.env.example` for templates
-   - Never put real credentials in example files
-   - Document what each variable does
 
 ### Code Signing (Recommended for Releases)
 
@@ -178,31 +143,6 @@ To reduce antivirus false positives:
    os.chmod(config_path, stat.S_IRUSR | stat.S_IWUSR)
    ```
 
-### Analytics Security
-
-1. **API Secret Protection:**
-   - Never log API secrets
-   - Never send secrets to users
-   - Regenerate if compromised
-
-2. **Client ID Privacy:**
-   - Use random UUID, not MAC address
-   - Store locally, never transmit to third parties
-   - Allow users to reset by deleting `user_config.json`
-
-3. **Network Requests:**
-   ```python
-   # Always use HTTPS
-   url = "https://www.google-analytics.com/mp/collect"
-   
-   # Set timeout to prevent hanging
-   response = requests.post(url, timeout=5)
-   
-   # Never log response with sensitive data
-   print("✓ Analytics sent")  # ✅ GOOD
-   print(f"Response: {response.text}")  # ❌ BAD
-   ```
-
 ---
 
 ## 🐛 Reporting Vulnerabilities
@@ -240,15 +180,12 @@ Currently, no bug bounty program. Security researchers are credited in:
 
 Before submitting a pull request:
 
-- [ ] No hardcoded secrets or API keys
-- [ ] All secrets loaded from environment variables
-- [ ] `.env` and sensitive files in `.gitignore`
+- [ ] No hardcoded secrets or sensitive data
 - [ ] Dependencies pinned to specific versions
 - [ ] Error messages don't leak sensitive information
 - [ ] File operations use secure permissions
-- [ ] Network requests use HTTPS with timeouts
 - [ ] Input validation for user-provided data
-- [ ] Code reviewed for injection vulnerabilities
+- [ ] Code reviewed for security vulnerabilities
 - [ ] No debug code left in production
 
 ---

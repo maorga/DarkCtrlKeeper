@@ -20,22 +20,12 @@ from core.timer_manager import TimerManager
 from ui.styles import *
 from ui.dialogs import show_info_dialog
 
-# Optional analytics
-try:
-    from config.config_loader import Config
-    from analytics_manager import create_analytics_manager
-    CONFIG_AVAILABLE = True
-except ImportError:
-    CONFIG_AVAILABLE = False
-    print("Warning: Config/Analytics modules not found. Running in basic mode.")
-
 
 class DarkCtrlKeeperWindow(QWidget):
     """
     Main application window for DarkCtrlKeeper.
     
-    Orchestrates UI components, keyboard control, timer logic,
-    and optional analytics tracking.
+    Orchestrates UI components, keyboard control, and timer logic.
     """
     
     # Qt signals for thread-safe operations
@@ -45,7 +35,6 @@ class DarkCtrlKeeperWindow(QWidget):
         super().__init__()
         
         # Initialize core managers
-        self._init_config_and_analytics()
         self._init_managers()
         
         # Window setup
@@ -64,37 +53,7 @@ class DarkCtrlKeeperWindow(QWidget):
         # Start keyboard listener
         self.keyboard_mgr.start_listening()
         
-        # Track app open
-        if self.analytics:
-            self.analytics.track_event('app_opened', {
-                'version': '1.0.0',
-                'platform': sys.platform
-            })
-        
         print("✓ DarkCtrlKeeper initialized successfully")
-    
-    def _init_config_and_analytics(self):
-        """Initialize configuration and analytics."""
-        self.config = None
-        self.analytics = None
-        
-        if not CONFIG_AVAILABLE:
-            return
-        
-        try:
-            self.config = Config()
-            print(self.config.get_config_summary())
-            
-            if self.config.is_analytics_enabled():
-                ga4_config = self.config.get_ga4_config()
-                self.analytics = create_analytics_manager(
-                    ga4_config['measurement_id'],
-                    ga4_config['api_secret']
-                )
-            else:
-                self.analytics = create_analytics_manager(None, None)
-        except Exception as e:
-            print(f"Warning: Could not initialize config/analytics: {e}")
     
     def _init_managers(self):
         """Initialize core logic managers."""
@@ -348,9 +307,6 @@ class DarkCtrlKeeperWindow(QWidget):
             self.pressed_text.setVisible(True)
             self.released_text.setVisible(False)
             
-            if self.analytics:
-                self.analytics.track_event('ctrl_locked')
-            
             print("✓ Lock button clicked - CTRL IS PRESSED")
     
     def _on_release_clicked(self):
@@ -364,9 +320,6 @@ class DarkCtrlKeeperWindow(QWidget):
             self.lock_button.setIcon(QIcon(self.lock_active_pixmap))
             self.pressed_text.setVisible(False)
             self.released_text.setVisible(True)
-            
-            if self.analytics:
-                self.analytics.track_event('ctrl_released')
             
             print("✓ Release button clicked - CTRL RELEASED")
     
@@ -480,12 +433,6 @@ class DarkCtrlKeeperWindow(QWidget):
             # Stop timers
             self.qt_timer.stop()
             self.alert_pulse_timer.stop()
-            
-            # Analytics
-            if self.analytics:
-                self.analytics.track_event('app_closed')
-                self.analytics.shutdown()
-                print("✓ Analytics shutdown complete")
         except Exception as e:
             print(f"Cleanup warning: {e}")
         

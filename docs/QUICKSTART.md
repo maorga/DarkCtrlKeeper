@@ -111,31 +111,6 @@ Get up and running with DarkCtrlKeeper in 5 minutes!
 
 ---
 
-## 🔧 Configuration (Optional)
-
-### Enable Analytics (Optional)
-
-1. **Copy the template:**
-   ```powershell
-   Copy-Item .env.example .env
-   ```
-
-2. **Edit .env file:**
-   ```bash
-   GA4_MEASUREMENT_ID=G-XXXXXXXXXX
-   GA4_API_SECRET=your_secret_here
-   ```
-
-3. **Get credentials:**
-   - See `docs/GA4_TRACKING_GUIDE.md` for detailed instructions
-
-4. **Restart the app:**
-   - Analytics will now track usage events
-
-**Note:** Analytics is completely optional. The app works perfectly without it.
-
----
-
 ## ❓ Troubleshooting
 
 ### Application won't start
@@ -235,7 +210,6 @@ python src/main.py
 ## 📖 More Information
 
 - **Full User Guide:** `USAGE.md`
-- **Analytics Setup:** `docs/GA4_TRACKING_GUIDE.md`
 - **Security:** `docs/SECURITY.md`
 - **Development:** `README.md`
 - **Changelog:** `CHANGELOG.md`
@@ -273,12 +247,7 @@ python src/main.py
 - Rebuff at ~5 seconds remaining (yellow zone)
 - Never let it reach red zone during combat
 
-### Tip 3: Analytics Privacy
-- Want analytics? Create `.env` file
-- Don't want analytics? Don't create `.env`
-- No performance difference either way
-
-### Tip 4: Multiple Accounts
+### Tip 3: Multiple Accounts
 - Run multiple instances for multiple accounts
 - Each window tracks its own buff timer
 - Use different positions on screen
