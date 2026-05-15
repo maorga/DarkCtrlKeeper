@@ -188,22 +188,23 @@ python src/main.py
    python -m venv venv
    .\venv\Scripts\Activate.ps1
    pip install -r requirements.txt
-   pip install pyinstaller
    ```
+   > `requirements.txt` already includes `pyinstaller` and `Pillow` — no extra installs needed.
 
 2. **Build executable:**
    ```powershell
-   python scripts/build.py
+   pyinstaller DarkCtrlKeeper.spec
    ```
 
 3. **Find executable:**
    ```
-   dist/DarkCtrlKeeper/DarkCtrlKeeper.exe
+   dist\DarkCtrlKeeper.exe
    ```
 
 4. **Distribute:**
-   - Zip the entire `dist/DarkCtrlKeeper` folder
-   - Share the zip file
+   - Share the single `DarkCtrlKeeper.exe` file
+   - No Python installation required on the recipient's machine
+   - Settings are stored per-user at `%APPDATA%\DarkCtrlKeeper\settings.json`
 
 ---
 

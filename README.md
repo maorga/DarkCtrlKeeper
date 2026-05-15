@@ -73,7 +73,20 @@
   - Stop/Resume timer controls
   - Manual reset button
 
-- **🔒 Administrator Privileges**
+- **� Resizable Window**
+  - Drag the gothic-styled grip in the bottom-right corner to resize
+  - All UI elements, fonts, and buttons scale proportionally
+  - Window maintains its aspect ratio at every size
+  - Cursor changes to resize arrow when hovering the grip
+
+- **💾 Persistent Settings**
+  - Hotkey selection (4 or 5) is remembered between sessions
+  - Window size is restored on next launch
+  - Settings saved automatically on every change and on close
+  - CTRL always starts **released** on launch for safety
+  - Stored at `%APPDATA%\DarkCtrlKeeper\settings.json` (packaged)
+
+- **�🔒 Administrator Privileges**
   - Automatically requests UAC elevation
   - Required for global keyboard control
 
@@ -122,7 +135,7 @@ python src/main.py
 ### Option 1: Pre-Built Executable (Recommended)
 
 1. Go to [Releases](https://github.com/maorga/DarkCtrlKeeper/releases)
-2. Download `DarkCtrlKeeper_v1.0.0.zip`
+2. Download `DarkCtrlKeeper_v1.1.0.zip`
 3. Extract to `C:\Games\DarkCtrlKeeper` (or any location)
 4. Run `DarkCtrlKeeper.exe`
 
@@ -184,9 +197,11 @@ python src/main.py
 ### Tips & Tricks
 
 - **Positioning:** Drag the window to position it near your MU Online window
+- **Resizing:** Drag the bottom-right corner grip to resize; the entire UI scales with the window
 - **Multiple Accounts:** Run multiple instances for different characters
 - **Timer Control:** Use STOP to pause, RESET to manually reset
 - **Safe Exit:** Always releases CTRL automatically when closed
+- **Settings:** Your hotkey choice and window size are saved automatically
 
 See [USAGE.md](USAGE.md) for comprehensive usage instructions.
 
@@ -222,8 +237,8 @@ This is the **original** DarkCtrlKeeper by [@MaorG](https://github.com/maorga).
 ### Prerequisites
 
 ```powershell
-# Install PyInstaller
-pip install pyinstaller
+# Install all dependencies including build tools
+pip install -r requirements.txt
 
 # Verify all assets are present
 Get-ChildItem assets\
@@ -232,36 +247,49 @@ Get-ChildItem assets\
 ### Build Executable
 
 ```powershell
-# Run build script
-python scripts/build.py
+# Build using the spec file
+pyinstaller DarkCtrlKeeper.spec
 
 # Output location
-dir dist\DarkCtrlKeeper\
-
-# Test the executable
-.\dist\DarkCtrlKeeper\DarkCtrlKeeper.exe
+dist\DarkCtrlKeeper.exe
 ```
 
 ### Build Configuration
 
-The build uses these PyInstaller settings:
-- `--onedir`: Creates folder structure (not single file)
-- `--windowed`: No console window
-- `--uac-admin`: Requests administrator privileges
-- `--noupx`: No compression (better antivirus compatibility)
-- `--icon`: Uses `assets/ICON.ico`
-
-See [scripts/build.py](scripts/build.py) for full configuration.
+The build is fully configured in [`DarkCtrlKeeper.spec`](DarkCtrlKeeper.spec):
+- Single-file exe (`--onefile`)
+- No console window (`--windowed`)
+- UAC elevation on launch (`uac_admin=True`)
+- Bundled `assets/` folder
+- Custom icon `assets/ICON.ico`
+- `Pillow` is required at build time for icon processing (included in `requirements.txt`)
 
 ---
 
 ## ⚙️ Configuration
 
+### Persistent User Settings
+
+DarkCtrlKeeper automatically saves and restores user preferences with no setup required.
+
+| Setting | What is saved | Default |
+|---|---|---|
+| `hotkey` | Selected buff hotkey (`"4"` or `"5"`) | `"5"` |
+| `window_width` | Last window width in pixels | `356` |
+| `window_height` | Last window height in pixels | `430` |
+| `lock_active` | Always restored as released | `true` |
+
+**Storage location:**
+- **Packaged exe:** `%APPDATA%\DarkCtrlKeeper\settings.json`
+- **Running from source:** project root `settings.json`
+
+The file is created automatically on first use. If it is missing or corrupt the app silently falls back to defaults.
+
 ### Environment Variables
 
 | Variable | Description | Default |
-|----------|-------------|---------|
-| `APP_VERSION` | Application version | `1.0.0` |
+|----------|-------------|---------||
+| `APP_VERSION` | Application version | `1.1.0` |
 | `DEBUG` | Enable debug mode (`true`/`false`) | `false` |
 
 ---
@@ -414,11 +442,13 @@ See [LICENSE](LICENSE) for full text.
 ## 🎯 Project Status
 
 **Status:** ✅ Production Ready  
-**Version:** 1.0.0  
-**Last Updated:** November 12, 2025
+**Version:** 1.1.0  
+**Last Updated:** May 15, 2026
 
 ### Roadmap
 
+- [x] Resizable window with proportional UI scaling
+- [x] Persistent settings (hotkey, window size)
 - [ ] Multiple buff timers
 - [ ] Customizable hotkeys
 - [ ] Sound notifications
