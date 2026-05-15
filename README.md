@@ -10,7 +10,7 @@
 
 *Maintain your Greater Fortitude buff with style* ✨
 
-![DarkCtrlKeeper Application](assets/DarkCtrlKeeper_new-version.png)
+![DarkCtrlKeeper Application](assets/final_version.png)
 
 </div>
 
