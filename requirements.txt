@@ -27,5 +27,6 @@ python-dotenv>=1.0.0
 # black>=23.0.0
 # mypy>=1.5.0
 
-# Build
+# Build Tools (required to compile the .exe)
 pyinstaller>=6.0.0
+Pillow>=9.0.0
