@@ -288,7 +288,7 @@ The file is created automatically on first use. If it is missing or corrupt the 
 ### Environment Variables
 
 | Variable | Description | Default |
-|----------|-------------|---------||
+|---|---|---|
 | `APP_VERSION` | Application version | `1.1.0` |
 | `DEBUG` | Enable debug mode (`true`/`false`) | `false` |
 
@@ -298,8 +298,6 @@ The file is created automatically on first use. If it is missing or corrupt the 
 
 ### User Documentation
 - **[Quick Start Guide](docs/QUICKSTART.md)** - Get up and running in 5 minutes
-- **[Usage Guide](USAGE.md)** - Comprehensive usage instructions
-- **[Changelog](CHANGELOG.md)** - Version history and changes
 
 ### Developer Documentation
 - **[Project Summary](docs/PROJECT_SUMMARY.md)** - Technical architecture overview
